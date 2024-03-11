@@ -36,9 +36,9 @@ export const getAllProduct = (keyword = "", currentPage = 1, price = [0, 2500], 
   try {
     console.log(category);
     dispatch({ type:ALL_PRODUCT_REQUEST})
-    let link = `http://localhost:8800/api/item/product/all/product-list?keyword=${keyword}&page=${currentPage}&min=${price[0]}&max=${price[1]}`
+    let link = `https://mern-api-ujke.onrender.com/api/item/product/all/product-list?keyword=${keyword}&page=${currentPage}&min=${price[0]}&max=${price[1]}`
     if(category){
-           link = `http://localhost:8800/api/item/product/all/product-list?keyword=${''}&page=${currentPage}&min=${''}&max=${''}&category=${category}`
+           link = `https://mern-api-ujke.onrender.com/api/item/product/all/product-list?keyword=${''}&page=${currentPage}&min=${''}&max=${''}&category=${category}`
     }
     const {data} = await axios.get(link);
     console.log(data,'hello ');
@@ -58,7 +58,7 @@ export const getAllProduct = (keyword = "", currentPage = 1, price = [0, 2500], 
 // export const getAllDeal = ( currentPage = 3)=> async(dispatch)=>{
 //   try {
 //     dispatch({ type:ALL_PRODUCT_REQUEST})
-//     let link = `http://localhost:8800/api/item/product/all/product-list?keyword=${''}&page=${currentPage}&min=${''}&max=${''}&category=${''}`
+//     let link = `https://mern-api-ujke.onrender.com/api/item/product/all/product-list?keyword=${''}&page=${currentPage}&min=${''}&max=${''}&category=${''}`
 //     const {data} = await axios.get(link);
 //     console.log(data,'hello ');
 //     dispatch({
@@ -76,7 +76,7 @@ export const getAllProduct = (keyword = "", currentPage = 1, price = [0, 2500], 
 export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
-    const { data } = await axios.get("http://localhost:8800/api/item/getPo");
+    const { data } = await axios.get("https://mern-api-ujke.onrender.com/api/item/getPo");
     dispatch({
       type: ADMIN_PRODUCT_SUCCESS,
       payload: data.prod,
@@ -96,7 +96,7 @@ export const createProduct = (myForm,id) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
     const { data } = await axios.post(
-      `http://localhost:8800/api/item/product/new?id=${id}`, myForm, config
+      `https://mern-api-ujke.onrender.com/api/item/product/new?id=${id}`, myForm, config
     );
 
     dispatch({
@@ -114,7 +114,7 @@ export const getProDetails = (id)=> async(dispatch)=>{
  try {
   dispatch({type:PRODUCT_DETAILS_REQUEST});
 
-  const {data} = await axios.get(`http://localhost:8800/api/item/product/details/${id}`)
+  const {data} = await axios.get(`https://mern-api-ujke.onrender.com/api/item/product/details/${id}`)
   
   dispatch({
     type:PRODUCT_DETAILS_SUCCESS,
@@ -133,7 +133,7 @@ export const getProDetails = (id)=> async(dispatch)=>{
       const config = {
         headers: { "Content-Type": "application/json" },
       };
-      const { data } = await axios.put(`http://localhost:8800/api/item/createReview?id=${id}&username=${username}`, myForm, config);
+      const { data } = await axios.put(`https://mern-api-ujke.onrender.com/api/item/createReview?id=${id}&username=${username}`, myForm, config);
       dispatch({
         type: NEW_REVIEW_SUCCESS,
         payload: data.success,
@@ -149,7 +149,7 @@ export const getProDetails = (id)=> async(dispatch)=>{
 export const filter = (cat)=> async(dispatch)=>{
   try {
     dispatch({type:PRODUCT_RELATED_REQUEST});
-    const {data} = await axios.get(`http://localhost:8800/api/item/filter?category=${cat}`);
+    const {data} = await axios.get(`https://mern-api-ujke.onrender.com/api/item/filter?category=${cat}`);
     dispatch({
       type:PRODUCT_RELATED_SUCCESS,
       payload:data
@@ -168,7 +168,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
     const { data } = await axios.put(
-      `http://localhost:8800/api/item/product/update/${id}`,
+      `https://mern-api-ujke.onrender.com/api/item/product/update/${id}`,
       productData,
       config
     );
@@ -187,7 +187,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
 export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
-    const { data } = await axios.delete(`http://localhost:8800/api/item/product/delete/${id}`);
+    const { data } = await axios.delete(`https://mern-api-ujke.onrender.com/api/item/product/delete/${id}`);
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
       payload: data.success,
@@ -203,7 +203,7 @@ export const deleteProduct = (id) => async (dispatch) => {
 export const reviewDel = (ProductID,id)=> async(dispatch)=>{
   try {
     dispatch({type:DELETE_REVIEW_REQUEST});
-    const {data} = await axios.delete(`http://localhost:8800/api/item/deleteReivew?ProductID=${ProductID}&id=${id}`)
+    const {data} = await axios.delete(`https://mern-api-ujke.onrender.com/api/item/deleteReivew?ProductID=${ProductID}&id=${id}`)
     dispatch({
       type: DELETE_REVIEW_SUCCESS,
       payload: data,

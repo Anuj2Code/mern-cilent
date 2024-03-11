@@ -31,14 +31,14 @@ import {
           "Content-Type": "application/json",
         },
       }
-     const {data} = await axios.post(`http://localhost:8800/api/order/createOrder?id=${id}`,order,config)
+     const {data} = await axios.post(`https://mern-api-ujke.onrender.com/api/order/createOrder?id=${id}`,order,config)
      dispatch({ type: CREATE_ORDER_SUCCESS, payload: data  });
   }
 
  export const myOrder = (id)=> async(dispatch)=>{
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
-    const { data } = await axios.get(`http://localhost:8800/api/order/myOrder?id=${id}`);
+    const { data } = await axios.get(`https://mern-api-ujke.onrender.com/api/order/myOrder?id=${id}`);
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data});
   } catch (error) {
     dispatch({
@@ -51,7 +51,7 @@ import {
  export const getOrderDetails = (id) => async(dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
-    const { data } = await axios.get(`http://localhost:8800/api/order/singleOrder/${id}`);
+    const { data } = await axios.get(`https://mern-api-ujke.onrender.com/api/order/singleOrder/${id}`);
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
     // localStorage.setItem('det',JSON.stringify(data))
   } catch (error) {
@@ -66,7 +66,7 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
-    const { data } = await axios.get("http://localhost:8800/api/order/getAllOrder");
+    const { data } = await axios.get("https://mern-api-ujke.onrender.com/api/order/getAllOrder");
 
     dispatch({ type: ALL_ORDERS_SUCCESS, payload: data});
   } catch (error) {
@@ -84,7 +84,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const { data } = await axios.put(`http://localhost:8800/api/order/updateOrder/${id}`,order,config);
+    const { data } = await axios.put(`https://mern-api-ujke.onrender.com/api/order/updateOrder/${id}`,order,config);
     dispatch({ type: UPDATE_ORDER_SUCCESS, payload: data.success });
   } catch (error) {
     dispatch({
@@ -98,7 +98,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
 export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
-    const { data } = await axios.delete(`http://localhost:8800/api/order/deleteOrder/${id}`);
+    const { data } = await axios.delete(`https://mern-api-ujke.onrender.com/api/order/deleteOrder/${id}`);
     dispatch({ type: DELETE_ORDER_SUCCESS, payload: data.success });
   } catch (error) {
     dispatch({
@@ -112,7 +112,7 @@ export const orderEmail = (email)=> async(dispatch)=>{
   try {
     dispatch({ type: OREDR_EMAIL_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };
-    const { data } = await axios.post(`http://localhost:8800/api/order/sucess?email=${email}`, config);
+    const { data } = await axios.post(`https://mern-api-ujke.onrender.com/api/order/sucess?email=${email}`, config);
     dispatch({ type: OREDR_EMAIL_SUCCESS, payload: data });
   } catch (error) {
     dispatch({type: OREDR_EMAIL_FAIL,payload: error.response.data.message,});

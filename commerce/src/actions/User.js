@@ -40,7 +40,7 @@ export const login = (email, password) => async (dispatch) => {
     dispatch({ type: LOGIN_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };
     const { data } = await axios.post(
-      `http://localhost:8800/api/auth/login`,
+      `https://mern-api-ujke.onrender.com/api/auth/login`,
       { email, password },
       config
     );
@@ -56,7 +56,7 @@ export const register = (userData) => async (dispatch) => {
     dispatch({ type: REGISTER_USER_REQUEST });
     const config = { headers: { "Content-Type": "multipart/form-data" } };
     const { data } = await axios.post(
-      `http://localhost:8800/api/auth/register`,
+      `https://mern-api-ujke.onrender.com/api/auth/register`,
       userData,
       config
     );
@@ -77,7 +77,7 @@ export const updateProfile = (myForm, id, imgId) => async (dispatch) => {
     dispatch({ type: UPDATE_PROFILE_REQUEST });
     const config = { headers: { "Content-Type": "multipart/form-data" } };
     const { data } = await axios.put(
-      `http://localhost:8800/api/auth/updateProfile/${id}?img=${imgId}`,
+      `https://mern-api-ujke.onrender.com/api/auth/updateProfile/${id}?img=${imgId}`,
       myForm,
       config
     );
@@ -92,7 +92,7 @@ export const updatePassword = (myForm, id)=>async(dispatch)=>{
   try {
     dispatch({ type: UPDATE_PASSWORD_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };
-    const { data } = await axios.put(`http://localhost:8800/api/auth/update/${id}`,myForm,config);
+    const { data } = await axios.put(`https://mern-api-ujke.onrender.com/api/auth/update/${id}`,myForm,config);
     dispatch({ type: UPDATE_PASSWORD_SUCCESS, payload: data });
     
   } catch (error) {
@@ -105,7 +105,7 @@ export const forgotPassword = (email) => async (dispatch) => {
   try {
     dispatch({ type: FORGOT_PASSWORD_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };
-    const { data } = await axios.post(`http://localhost:8800/api/auth/password/forgot`, email, config);
+    const { data } = await axios.post(`https://mern-api-ujke.onrender.com/api/auth/password/forgot`, email, config);
     dispatch({ type: FORGOT_PASSWORD_SUCCESS, payload: data });
     localStorage.setItem("user", JSON.stringify(data));
   } catch (error) {
@@ -116,7 +116,7 @@ export const forgotPassword = (email) => async (dispatch) => {
 export const getAllUsers = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_USERS_REQUEST });
-    const { data } = await axios.get(`http://localhost:8800/api/auth/getalluser`);
+    const { data } = await axios.get(`https://mern-api-ujke.onrender.com/api/auth/getalluser`);
     dispatch({ type: ALL_USERS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: ALL_USERS_FAIL, payload: error.response.data.message });
@@ -126,7 +126,7 @@ export const getAllUsers = () => async (dispatch) => {
 export const getUserDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: USER_DETAILS_REQUEST });
-    const { data } = await axios.get(`http://localhost:8800/api/auth/getSingleUser/${id}`);
+    const { data } = await axios.get(`https://mern-api-ujke.onrender.com/api/auth/getSingleUser/${id}`);
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: USER_DETAILS_FAIL, payload: error.response.data.message });
@@ -138,7 +138,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
     dispatch({ type: UPDATE_USER_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };
     const { data } = await axios.put(
-      `http://localhost:8800/api/auth/changeRole/${id}`,
+      `https://mern-api-ujke.onrender.com/api/auth/changeRole/${id}`,
       userData,
       config
     );
@@ -154,7 +154,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
 export const deleteUser = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_USER_REQUEST });
-    const { data } = await axios.delete(`http://localhost:8800/api/auth/deleteUser/${id}`);
+    const { data } = await axios.delete(`https://mern-api-ujke.onrender.com/api/auth/deleteUser/${id}`);
     dispatch({ type: DELETE_USER_SUCCESS, payload: data });
   } catch (error) {
     dispatch({

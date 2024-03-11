@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const addToCart = (id, quantity) => async (dispatch, getState) => {
   const { data } = await axios.get(
-    `http://localhost:8800/api/item/product/details/${id}`
+    `https://mern-api-ujke.onrender.com/api/item/product/details/${id}`
   );
   dispatch({
     type: ADD_TO_CART,
