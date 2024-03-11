@@ -8,7 +8,7 @@ const NewCol = (props) => {
     useEffect(()=>{ 
         const fetchData =async()=>{
           try {
-              let info = await axios.get(`http://localhost:8800/api/item/filter?category=${cat}`);
+              let info = await axios.get(`https://mern-api-ujke.onrender.com/api/item/filter?category=${cat}`);
               setData(info.data);
           } catch (error) {
               console.log(error);
