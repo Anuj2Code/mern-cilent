@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9225677b.css",
+    "main.js": "/static/js/main.bc0da5b6.js",
+    "static/js/787.19315f8a.chunk.js": "/static/js/787.19315f8a.chunk.js",
+    "static/media/pexels-polina-tankilevitch-5585946 (1080p).mp4": "/static/media/pexels-polina-tankilevitch-5585946 (1080p).52f48a9660f16fa4211a.mp4",
+    "static/media/phot.png": "/static/media/phot.e2c4e75dbb40679926d9.png",
+    "static/media/6333040.jpg": "/static/media/6333040.3e2807e06eebc8aa4616.jpg",
+    "static/media/tracking-delivery.jpg": "/static/media/tracking-delivery.e366593c8b6e9bbef9b2.jpg",
+    "static/media/cart1 - Copy.avif": "/static/media/cart1 - Copy.967b1223e30935bf753d.avif",
+    "static/media/trash-bin-icon.png": "/static/media/trash-bin-icon.a70bda0bb0b81aa44216.png",
+    "static/media/jpg": "/static/media/2fb909b74a854f0715e64dda5825990d.07f71bfbb3c4adee2e2c.jpg",
+    "static/media/inkpx-curved-text (2).png": "/static/media/inkpx-curved-text (2).83f02f61f6fa995a9eb3.png",
+    "static/media/shield.png": "/static/media/shield.f972fec24d68c5b8893f.png",
+    "static/media/OIP.jpg": "/static/media/OIP.6885fb5e5e70aaef100c.jpg",
+    "static/media/filter.jpg": "/static/media/filter.9e0fcc2f13b77c0b1128.jpg",
+    "static/media/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png": "/static/media/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.94b78e6ac5e8b35c30a4.png",
+    "static/media/cross.png": "/static/media/cross.485ec0bbb9f3dd856644.png",
+    "static/media/redux.cjs": "/static/media/redux.7edfc461ab353f1712ab.cjs",
+    "static/media/orderSaved.avif": "/static/media/orderSaved.5e783603312334e4deeb.avif",
+    "static/media/modern-badge-logo-instagram-icon_578229-124.avif": "/static/media/modern-badge-logo-instagram-icon_578229-124.2f0ecea9fa95645f32c5.avif",
+    "static/media/fragment.glsl": "/static/media/fragment.e84f6d3509cbff462050.glsl",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "index.html": "/index.html",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/vertex.glsl": "/static/media/vertex.d78b86e2e4667824ec92.glsl",
+    "main.9225677b.css.map": "/static/css/main.9225677b.css.map",
+    "main.bc0da5b6.js.map": "/static/js/main.bc0da5b6.js.map",
+    "787.19315f8a.chunk.js.map": "/static/js/787.19315f8a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9225677b.css",
+    "static/js/main.bc0da5b6.js"
+  ]
+}
