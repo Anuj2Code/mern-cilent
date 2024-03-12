@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate} from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
-import { Button } from "@material-ui/core";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import DescriptionIcon from "@material-ui/icons/Description";
-import StorageIcon from "@material-ui/icons/Storage";
-import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import {useLocation} from 'react-router-dom'
 import {getProDetails,updateProduct} from '../../actions/Product'
 import Sidebar from "./Sidebar";
@@ -92,7 +86,6 @@ const UpdateProduct = () => {
             <h1>Create Product</h1>
 
             <div>
-              <SpellcheckIcon />
               <input
                className="mt-[10px]"
                 type="text"
@@ -103,7 +96,6 @@ const UpdateProduct = () => {
               />
             </div>
             <div>
-              <AttachMoneyIcon />
               <input
                className="mt-[10px]"
                 type="number"
@@ -115,7 +107,6 @@ const UpdateProduct = () => {
             </div>
 
             <div>
-              <DescriptionIcon />
 
               <textarea
                className="mt-[10px]"
@@ -128,7 +119,6 @@ const UpdateProduct = () => {
             </div>
 
             <div>
-              <AccountTreeIcon />
               <select
                className="mt-[10px]"
                 value={category}
@@ -144,7 +134,6 @@ const UpdateProduct = () => {
             </div>
 
             <div>
-              <StorageIcon />
               <input
                className="mt-[10px]"
                 type="number"
@@ -171,3 +160,4 @@ const UpdateProduct = () => {
 }
 
 export default UpdateProduct
+
