@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
 import {useLocation} from 'react-router-dom'
 import SideBar from "./Sidebar";
 import {
@@ -8,8 +7,6 @@ import {
   updateOrder
 } from "../../actions/Order"
 import { useSelector, useDispatch } from "react-redux";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import { Button } from "@material-ui/core";
 import { UPDATE_ORDER_RESET } from "../../constant/Order";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -144,7 +141,6 @@ const ProcessOrder = () => {
                   <h1>Process Order</h1>
 
                   <div>
-                    <AccountTreeIcon />
                     <select onChange={(e) => setStatus(e.target.value)}>
                       <option value="">Choose Category</option>
                       {orderDetail.orderStatus === "Processing" && (
@@ -157,13 +153,13 @@ const ProcessOrder = () => {
                     </select>
                   </div>
 
-                  <Button
+                  <button
                     id="createProductBtn"
                     type="submit"
                   
                   >
                     Process
-                  </Button>
+                  </button>
                 </form>
               </div>
             </div>
