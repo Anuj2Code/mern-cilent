@@ -7,11 +7,18 @@ import {addToCart} from '../actions/Cart'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {newReview,reviewDel} from '../actions/Product'
-import {motion,AnimatePresence} from 'framer-motion'
 import cross from '../Componets/Images/trash_8357206.png'
 import profilePng from "../Componets/Images/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png";
 import { DELETE_REVIEW_RESET, NEW_REVIEW_RESET } from "../constant/Pro";
 import RelatedCard from "./RelatedCard";
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Button,
+} from '@mui/material';
+import { Rating } from '@mui/material';
 
 const ItemPiece = (props) => {
   const [quantity, setQuantity] = useState("1");
@@ -154,6 +161,36 @@ const ItemPiece = (props) => {
             </div>
           </div>
           <h1 className="uppercase text-[50px] font-bold w-[100%] text-center">Reviews</h1>
+          <Dialog
+            aria-labelledby="simple-dialog-title"
+            open={open}
+            onClose={submitReviewToggle}
+          >
+            <DialogTitle>Submit Review</DialogTitle>
+            <DialogContent className="submitDialog flex flex-col">
+              <Rating
+                onChange={(e) => setRating(e.target.value)}
+                value={rating}
+                size="large"
+              />
+
+              <textarea
+                className="submitDialogTextArea"
+                cols="30"
+                rows="5"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              ></textarea>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={submitReviewToggle} color="secondary">
+                Cancel
+              </Button>
+              <Button onClick={reviewSubmitHandler} color="primary">
+                Submit
+              </Button>
+            </DialogActions>
+          </Dialog>
         {product.reviews && product.reviews[0]?(
             <div className="reviews flex flex-wrap overflow-x-scroll justify-center gap-4 items-center min-h-[80vh]">
              { product.reviews && product.reviews.map((review)=>{
@@ -190,3 +227,4 @@ const ItemPiece = (props) => {
 };
 
 export default ItemPiece;
+
