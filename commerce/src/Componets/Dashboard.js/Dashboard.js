@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "./Sidebar.js";
 import "./Dashboard.css";
-import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { PieChart } from '@mui/x-charts/PieChart';
@@ -37,7 +36,7 @@ const data = [
     <div className="dashboard min-h-[100vh] mt-[10px]">
       <Sidebar />
       <div className="dashboardContainer">
-        <Typography component="h1">Dashboard</Typography>
+        <h1 component="h1">Dashboard</h1>
         <div className="dashboardSummary">
           <div>
             <p>
