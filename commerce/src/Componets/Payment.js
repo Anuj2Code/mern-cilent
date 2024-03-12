@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -52,7 +51,7 @@ const Payment = () => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:8800/api/payment/payment/process",
+        "https://mern-api-ujke.onrender.com/api/payment/payment/process",
         paymentData,
         config
       );
@@ -108,7 +107,8 @@ const Payment = () => {
           <h1 className="text-[45px] font-bold drop-shadow min-[980px]:h-[130px] text-center">
             Card Info
           </h1>
-          <div className="flex mb-[30px] gap-4 ml-[10px]">
+        <div className="ml-[35px]">
+        <div className="flex mb-[30px] gap-4 ml-[10px]">
             <CardNumberElement className="paymentInput w-[225px] p-[10px] h-[35px] bg-red-300 rounded-lg" />
           </div>
           <div className="flex mb-[30px] gap-4 ml-[10px] ">
@@ -117,6 +117,7 @@ const Payment = () => {
           <div className="flex  mb-[30px] gap-4 ml-[10px]">
             <CardCvcElement className="paymentInput w-[225px] p-[10px] h-[35px] bg-red-300 rounded-lg" />
           </div>
+        </div>
           <input
             type="submit"
             className="min-[950px]:h-[50px] min-[950px]:ml-[12px] min-[950px]:w-[300px] bg-black text-white rounded-3xl min-[950px]:mt-[25px] max-[948px]:w-[33vw] max-[948px]:h-[39px]"
@@ -130,3 +131,4 @@ const Payment = () => {
 };
 
 export default Payment;
+
