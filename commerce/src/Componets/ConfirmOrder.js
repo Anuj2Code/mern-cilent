@@ -1,5 +1,4 @@
 import React from 'react'
-import CheckOutStepper from './CheckOutStepper'
 import {useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -27,7 +26,6 @@ const shippingCharges =20;
   };
   return (
    <>
-    <div className="mt-[10px]"> <CheckOutStepper activeStep={1} /></div>
     <div className='h-[90vh] flex justify-evenly '>
       <div className='w-[40%]  flex flex-col justify-center  gap-3 h-[90%] mt-[15px]'>
          <h1 className='text-[50px] pb-[10px] w-[60%] border-b-4 uppercase'>Shipping Info</h1>
