@@ -12,11 +12,6 @@ import React from "react";
         cName:'nav-text'
     },
     {
-        title:'My Orders',
-        path :'/myOrder',
-        cName:'nav-text'
-    },
-    {
         title:'Cart',
         path :'/cart',
         cName:'nav-text'
