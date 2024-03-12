@@ -1,15 +1,29 @@
 {
+  "homepage": ".",
   "name": "commerce",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/data-grid": "^4.0.0-alpha.37",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.61",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/lab": "^5.0.0-alpha.167",
+    "@mui/material": "^5.15.10",
     "@mui/x-charts": "^6.19.5",
+    "@mui/x-data-grid": "^6.19.6",
+    "@redux-devtools/extension": "^3.3.0",
     "@stripe/react-stripe-js": "^2.5.1",
     "@stripe/stripe-js": "^3.0.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
+    "chart.js": "^2.9.4",
     "cloudinary": "^2.0.1",
     "country-state-city": "^3.2.1",
     "express-fileupload": "^1.4.3",
@@ -20,6 +34,7 @@
     "icons": "^1.0.0",
     "locomotive-scroll": "^5.0.0-beta.11",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.4",
     "react-helmet": "^6.1.0",
@@ -76,4 +91,3 @@
     "tailwindcss": "^3.4.1"
   }
 }
-
