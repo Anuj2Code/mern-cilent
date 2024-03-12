@@ -2,12 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./NewProduct.css";
 import {useNavigate} from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
-import { Button } from "@material-ui/core";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import DescriptionIcon from "@material-ui/icons/Description";
-import StorageIcon from "@material-ui/icons/Storage";
-import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import Sidebar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constant/Pro";
 import { ToastContainer, toast } from 'react-toastify';
@@ -92,7 +86,7 @@ const NewProduct = () => {
             <h1>Create Product</h1>
 
             <div >
-              <SpellcheckIcon />
+           
               <input
               className="mt-[10px]"
                 type="text"
@@ -103,7 +97,7 @@ const NewProduct = () => {
               />
             </div>
             <div >
-              <AttachMoneyIcon />
+          
               <input
               className="mt-[10px]"
                 type="number"
@@ -114,7 +108,7 @@ const NewProduct = () => {
             </div>
 
             <div>
-              <DescriptionIcon />
+             
 
               <textarea
               className="mt-[10px] "
@@ -127,7 +121,7 @@ const NewProduct = () => {
             </div>
 
             <div >
-              <AccountTreeIcon />
+             
               <select onChange={(e) => setCategory(e.target.value)} className="mt-[10px]">
                 <option value="" className="mt-[10px]">Choose Category</option>
                 {categories.map((cate) => (
@@ -139,7 +133,7 @@ const NewProduct = () => {
             </div>
 
             <div>
-              <StorageIcon />
+             
               <input
               className="mt-[10px]"
                 type="number"
