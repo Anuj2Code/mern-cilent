@@ -29,9 +29,9 @@ const SignUp = (props) => {
     myForm.set("avatar", avatar);
     myForm.set("username",username);
     myForm.set("password",password);
-    myForm.set("email",email)
+    myForm.set("email",email);
     dispatch(register(myForm));
-    if(isAuthenticated){
+    if(isAuthenticated===true){
       toast.success('successfull register')
     setTimeout(()=>{
       navigate('/profile')
@@ -158,4 +158,5 @@ const registerDataChange = (e) => {
 }
 
 export default SignUp
+
 
