@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { myOrder} from "../actions/Order";
 import { Link } from "react-router-dom";
-import './MyOrder.css'
 
 const MyOrder = (props) => {
   const dispatch = useDispatch();
