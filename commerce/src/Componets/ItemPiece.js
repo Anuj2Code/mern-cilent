@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Carousel from "react-material-ui-carousel";
 import { useSelector, useDispatch } from "react-redux";
 import { getProDetails,filter } from "../actions/Product";
 import { useLocation } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import ReviewCard from  '../Componets/ReviewCard'
 import {addToCart} from '../actions/Cart'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,19 +10,8 @@ import {newReview,reviewDel} from '../actions/Product'
 import {motion,AnimatePresence} from 'framer-motion'
 import cross from '../Componets/Images/trash_8357206.png'
 import profilePng from "../Componets/Images/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png";
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Button,
-} from "@material-ui/core";
 import { DELETE_REVIEW_RESET, NEW_REVIEW_RESET } from "../constant/Pro";
-import { Rating } from "@material-ui/lab";
 import RelatedCard from "./RelatedCard";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const ItemPiece = (props) => {
   const [quantity, setQuantity] = useState("1");
@@ -122,14 +109,14 @@ const ItemPiece = (props) => {
      <ToastContainer />
       <div className="firstmodel h-[110vh] flex  [@media(max-width:780px)]:flex-col [@media(max-width:800px)]:justify-center [@media(max-width:800px)]:items-center [@media(max-width:800px)]:h-[156vh]">
         <div className="sec w-[50%] [@media(min-width:900px)]:mt-[15px] ">
-          <Carousel className="relative [@media(min-width:768px)]:left-[70px] [@media(min-width:768px)]:top-[35px] [@media(max-width:350px)]:h-[46vh]">
+          <div className="relative [@media(min-width:768px)]:left-[70px] [@media(min-width:768px)]:top-[35px] [@media(max-width:350px)]:h-[46vh]">
             {product.images &&
-              product.images.map((item, i) => {
+              product.images.slice(0,1).map((item, i) => {
                 return (
                   <img src={item.url} key={item.url} className=" w-[35vw] h-[90vh] [@media(max-width:800px)]:w-[50vw] [@media(max-width:800px)]:h-[43vh]" />
                 );
               })}
-          </Carousel>
+          </div>
         </div>
         <div className="w-[45%] rounded-2xl [@media(max-width:400px)]:w-[90vw] flex flex-col justify-center h-[100vh] items-center gap-8  border shadow-lg [@media(min-width:900px)]:mt-[25px]  [@media(min-width:900px)]:w-[45vw] [@media(max-width:650px)]:w-[80vw]  [@media(max-width:800px)]:w-[80vw] [@media(min-width:900px)]:mr-[20px]" >
               <div className="detailsBlock-1">
@@ -167,35 +154,6 @@ const ItemPiece = (props) => {
             </div>
           </div>
           <h1 className="uppercase text-[50px] font-bold w-[100%] text-center">Reviews</h1>
-          <Dialog
-            aria-labelledby="simple-dialog-title"
-            open={open}
-            onClose={submitReviewToggle}
-          >
-            <DialogTitle>Submit Review</DialogTitle>
-            <DialogContent className="submitDialog flex flex-col">
-              <Rating
-                onChange={(e) => setRating(e.target.value)}
-                value={rating}
-                size="large"
-              />
-              <textarea
-                className="submitDialogTextArea"
-                cols="30"
-                rows="5"
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-              ></textarea>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={submitReviewToggle} color="secondary">
-                Cancel
-              </Button>
-              <Button onClick={reviewSubmitHandler} color="primary">
-                Submit
-              </Button>
-            </DialogActions>
-          </Dialog>
         {product.reviews && product.reviews[0]?(
             <div className="reviews flex flex-wrap overflow-x-scroll justify-center gap-4 items-center min-h-[80vh]">
              { product.reviews && product.reviews.map((review)=>{
