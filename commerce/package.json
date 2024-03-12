@@ -1,9 +1,9 @@
 {
-  "homepage": ".",
   "name": "commerce",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mui/material": "^5.15.12",
     "@mui/x-charts": "^6.19.5",
     "@mui/x-data-grid": "^6.19.6",
     "@redux-devtools/extension": "^3.3.0",
