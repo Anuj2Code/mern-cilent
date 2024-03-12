@@ -1,5 +1,5 @@
+
 import React, { useEffect, useRef } from "react";
-import CheckOutStepper from "./CheckOutStepper";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,9 +10,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import CreditCardIcon from "@material-ui/icons/CreditCard";
-import EventIcon from "@material-ui/icons/Event";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {CreateOr} from '../actions/Order'
@@ -104,7 +102,6 @@ const Payment = () => {
       <ToastContainer />
       <div className="mt-[1px] bg-red-200 z-0 h-[0px]">
         {" "}
-        <CheckOutStepper activeStep={2} />
       </div>
       <div className="h-[100vh] flex justify-center items-center  ">
         <form action="" className="" onSubmit={(e) => submitHandler(e)}>
@@ -112,15 +109,12 @@ const Payment = () => {
             Card Info
           </h1>
           <div className="flex mb-[30px] gap-4 ml-[10px]">
-            <CreditCardIcon className="mt-[5px]" />
             <CardNumberElement className="paymentInput w-[225px] p-[10px] h-[35px] bg-red-300 rounded-lg" />
           </div>
           <div className="flex mb-[30px] gap-4 ml-[10px] ">
-            <EventIcon className="mt-[5px]" />
             <CardExpiryElement className="paymentInput w-[225px] p-[10px] h-[35px] bg-red-300 rounded-lg" />
           </div>
           <div className="flex  mb-[30px] gap-4 ml-[10px]">
-            <VpnKeyIcon className="mt-[5px]" />
             <CardCvcElement className="paymentInput w-[225px] p-[10px] h-[35px] bg-red-300 rounded-lg" />
           </div>
           <input
