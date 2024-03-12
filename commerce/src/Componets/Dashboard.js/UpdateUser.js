@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button } from "@material-ui/core";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import PersonIcon from "@material-ui/icons/Person";
-import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import SideBar from "./Sidebar";
 import {useLocation} from 'react-router-dom'
 import { UPDATE_USER_RESET } from "../../constant/User";
@@ -72,7 +68,6 @@ const UpdateUser = () => {
               <h1>Update User</h1>
 
               <div>
-                <PersonIcon />
                 <input
                   type="text"
                   placeholder="Name"
@@ -82,7 +77,6 @@ const UpdateUser = () => {
                 />
               </div>
               <div>
-                <MailOutlineIcon />
                 <input
                   type="email"
                   placeholder="Email"
@@ -93,7 +87,6 @@ const UpdateUser = () => {
               </div>
 
               <div>
-                <VerifiedUserIcon />
                 <select value={role} onChange={(e) => setRole(e.target.value)}>
                   <option value="">Choose Role</option>
                   <option value="admin">Admin</option>
@@ -101,7 +94,7 @@ const UpdateUser = () => {
                 </select>
               </div>
 
-              <Button
+              <button
                 id="createProductBtn"
                 type="submit"
                 disabled={
@@ -109,7 +102,7 @@ const UpdateUser = () => {
                 }
               >
                 Update
-              </Button>
+              </button>
             </form>
         </div>
       </div>
@@ -118,3 +111,4 @@ const UpdateUser = () => {
 }
 
 export default UpdateUser
+
