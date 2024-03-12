@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Pagination from "react-js-pagination";
 import Slider from "@mui/material/Slider";
-import Typography from '@mui/material/Typography';
 import {motion,AnimatePresence} from 'framer-motion'
 import cross from './Images/cross.png'
 import filter from './Images/filter.jpg'
@@ -67,7 +66,7 @@ const Products = (props) => {
         duration:1
       }}
       > <div className="w-[100%] flex justify-end p-[10px]"> <img src={cross} alt="" className="h-[70px] max-[505px]:h-[42px]"  onClick={()=> setSlide(!slide)} /></div>
-      <Typography style={{marginTop:'40px',fontSize:"30px",fontWeight:'bolder'}}>Price Range</Typography>
+      <h1 style={{marginTop:'40px',fontSize:"30px",fontWeight:'bolder'}}>Price Range</h1>
             <Slider
               value={price}
               onChange={priceHandler}
@@ -76,7 +75,7 @@ const Products = (props) => {
               min={1}
               max={2500}
              style={{width:'70%'}}/>
-      <Typography style={{marginTop:'25px',fontSize:"30px",fontWeight:'bolder'}} >Category</Typography> 
+      <h1 style={{marginTop:'25px',fontSize:"30px",fontWeight:'bolder'}} >Category</h1> 
       <div className="box md:mt-[12px]  gap-[6px] " >
         {categories.map((category)=>{
           return <div className="flex justify-center gap-[68px] pb-[20px] max-[505px]:text-[20px] text-[18px] uppercase font-semibold">
@@ -168,3 +167,4 @@ const Products = (props) => {
 };
 
 export default Products;
+
