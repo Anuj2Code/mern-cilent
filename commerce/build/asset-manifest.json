@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9225677b.css",
-    "main.js": "/static/js/main.fb17b237.js",
+    "main.css": "/static/css/main.b56c8dc3.css",
+    "main.js": "/static/js/main.9cd45dd2.js",
     "static/js/787.19315f8a.chunk.js": "/static/js/787.19315f8a.chunk.js",
     "static/media/pexels-polina-tankilevitch-5585946 (1080p).mp4": "/static/media/pexels-polina-tankilevitch-5585946 (1080p).52f48a9660f16fa4211a.mp4",
     "static/media/phot.png": "/static/media/phot.e2c4e75dbb40679926d9.png",
@@ -16,22 +16,17 @@
     "static/media/filter.jpg": "/static/media/filter.9e0fcc2f13b77c0b1128.jpg",
     "static/media/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png": "/static/media/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.94b78e6ac5e8b35c30a4.png",
     "static/media/cross.png": "/static/media/cross.485ec0bbb9f3dd856644.png",
-    "static/media/redux.cjs": "/static/media/redux.7edfc461ab353f1712ab.cjs",
     "static/media/orderSaved.avif": "/static/media/orderSaved.5e783603312334e4deeb.avif",
     "static/media/modern-badge-logo-instagram-icon_578229-124.avif": "/static/media/modern-badge-logo-instagram-icon_578229-124.2f0ecea9fa95645f32c5.avif",
     "static/media/fragment.glsl": "/static/media/fragment.e84f6d3509cbff462050.glsl",
-    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "index.html": "/index.html",
-    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "static/media/vertex.glsl": "/static/media/vertex.d78b86e2e4667824ec92.glsl",
-    "main.9225677b.css.map": "/static/css/main.9225677b.css.map",
-    "main.fb17b237.js.map": "/static/js/main.fb17b237.js.map",
+    "main.b56c8dc3.css.map": "/static/css/main.b56c8dc3.css.map",
+    "main.9cd45dd2.js.map": "/static/js/main.9cd45dd2.js.map",
     "787.19315f8a.chunk.js.map": "/static/js/787.19315f8a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9225677b.css",
-    "static/js/main.fb17b237.js"
+    "static/css/main.b56c8dc3.css",
+    "static/js/main.9cd45dd2.js"
   ]
 }
