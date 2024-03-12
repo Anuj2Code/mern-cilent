@@ -16,4 +16,9 @@ import React from "react";
         path :'/cart',
         cName:'nav-text'
     },
+     {
+      title:'My Order',
+      path :'/myorder',
+      cName:'nav-text'
+  },
   ]
