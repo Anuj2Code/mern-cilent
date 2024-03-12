@@ -17,15 +17,11 @@ import axios from 'axios';
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import OrderSuccess from './Componets/OrderSuccess';
-import MyOrder from './Componets/MyOrder';
 import OrderDetails from './Componets/OrderDetails';
 import Dashboard from './Componets/Dashboard.js/Dashboard';
-import ProductsList from './Componets/Dashboard.js/ProductsList';
 import NewProduct from './Componets/Dashboard.js/NewProduct';
 import UpdateProduct from './Componets/Dashboard.js/UpdateProduct';
-import OrderList from './Componets/Dashboard.js/OrderList';
 import ProcessOrder from './Componets/Dashboard.js/ProcessOrder';
-import UserList from './Componets/Dashboard.js/UserList';
 import UpdateUser from './Componets/Dashboard.js/UpdateUser';
 import { AnimatePresence } from 'framer-motion';
 import LoadingBar from 'react-top-loading-bar'
@@ -38,7 +34,7 @@ const AnimatedRoute = () => {
     const [stripeKey,setStripeKey] = useState("")
     const location = useLocation();
      const getStripeApiKey = async()=> {
-      const { data } = await axios.get("https://mern-api-ujke.onrender.com/api/payment/key");
+      const { data } = await axios.get("http://localhost:8800/api/payment/key");
       setStripeKey(data.stripeApiKey);
     }
     useEffect(()=>{
@@ -76,16 +72,12 @@ const AnimatedRoute = () => {
         <Route path='/checkout' element={<CheckOut setPr={setPr}/>}></Route>
         <Route path='/order/confirm' element={<ConfirmOrder/>}></Route>
         <Route path='/success' element={<OrderSuccess setPr={setPr}/>}></Route>
-        <Route path='/myOrder' element={<MyOrder setPr={setPr}/>}></Route>
         <Route path='/order/:id' element={<OrderDetails setPr={setPr}/>}></Route>
         <Route path='/admin/dashboard' element={<Dashboard/>}></Route>
-        <Route path='/admin/products' element={<ProductsList />}></Route>
         <Route path='/admin/product/:id' element={<UpdateProduct/>}></Route>
         <Route path='/admin/product' element={<NewProduct/>}></Route>
         <Route path='/admin/order/:id' element={<ProcessOrder/>}></Route>
-        <Route path='/admin/orders' element={<OrderList/>}></Route>
         <Route path='/admin/user/:id' element={<UpdateUser/>}></Route>
-        <Route path='/admin/users' element={<UserList/>}></Route>
         <Route path='/process/payment' element={stripeKey && (
          <Elements stripe={loadStripe(stripeKey)}><Payment/></Elements>
       )}></Route>
