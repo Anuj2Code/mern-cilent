@@ -93,7 +93,7 @@ const OrderDetails = (props) => {
                 </div>
                 <div className="flex justify-around pt-[20px] mt-[15px">
                   <h1 className="text-[24px] font-semibold">Total</h1>
-                  <h1>{orderDetail.totalPrice && orderDetail.totalPrice}</h1>
+                   <h1 className="ml-[35px]">{orderDetail.totalPrice && orderDetail.totalPrice}</h1>
                 </div>
             </div>
           </div>
