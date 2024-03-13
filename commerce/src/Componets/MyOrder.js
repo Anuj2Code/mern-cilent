@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { myOrder} from "../actions/Order";
@@ -27,8 +26,8 @@ const MyOrder = (props) => {
 
   return (
     <>
-    {user && orders ? <div className="min-h-[100vh] flex flex-col">
-        <table className=" ml-[100px]">
+    {user && orders  ? <div className="min-h-[100vh] flex flex-col">
+       {orders.data && orders.data.length>0 ? <table className=" ml-[100px]">
                 <tr className="h-[100px]">
                     <td className="text-[25px] font-serif font-bold">Order Id</td>
                     <td className="text-[25px] font-serif font-bold">Status</td>
@@ -45,7 +44,12 @@ const MyOrder = (props) => {
                 </tr>
                   )
                 })}
-            </table>
+            </table>:   <div className="h-[85vh] flex flex-col justify-center items-center  backdrop-blur-xl">
+       <h1 className="text-[50px] drop-shadow-md font-[static]">No Order to show</h1>
+       <Link to={'/login'}>
+       <button type='submit'  className='min-[950px]:h-[50px] min-[950px]:w-[300px] bg-black text-white rounded-3xl min-[950px]:mt-[25px] max-[948px]:w-[33vw] max-[948px]:h-[39px]' >Register</button>
+       </Link>
+        </div>}
       </div>:(
         <div className="h-[85vh] flex flex-col justify-center items-center  backdrop-blur-xl">
        <h1 className="text-[50px] drop-shadow-md font-[static]">Please Login/Register to continue</h1>
@@ -59,3 +63,4 @@ const MyOrder = (props) => {
 };
 
 export default MyOrder;
+
